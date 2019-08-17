@@ -1,0 +1,33 @@
+<p>portfolio-carousel works!</p>
+
+<section id="portfolio-section" class="portfolio home-section" [ngClass]="{'light-gray': backgroundGray}">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Works</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat unde inventore molestias ab adipisci eius nisi placeat
+          at.
+        </p>
+      </div>
+
+
+
+
+      <div  fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+
+    <app-portfolio-list [portfolios]="portfolios$ | async"></app-portfolio-list>
+
+
+
+
+
+  </div>
+
+<div class="text-center home-section-action">
+    <button mat-raised-button mat-lg-button color="accent"
+    (click)="loadMore()">
+    LOAD MORE</button>
+  </div>
+
+
+</div>
+</section>

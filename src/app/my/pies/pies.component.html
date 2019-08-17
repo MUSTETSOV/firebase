@@ -1,0 +1,23 @@
+
+  <h3>Выгружаем через один компонент</h3>
+
+    <mat-card *ngFor="let pie of pies$ | async">
+
+        <mat-card-title>  {{pie.name}}</mat-card-title>
+        <mat-card-content>
+            <p>{{pie.desc}}</p>
+        </mat-card-content>
+
+    </mat-card>
+
+
+  <button class="bottom-toolbar" mat-raised-button color="primary"
+          (click)="loadMore()">Load More</button>
+
+
+
+
+
+
+
+

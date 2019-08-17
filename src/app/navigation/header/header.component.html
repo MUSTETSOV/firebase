@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/"><img src="../assets/apple-touch-icon.png" alt="Smiley face" height="50" width="50"></a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="isAuth">only for logged</button>
+        <button mat-menu-item [routerLink]="['/carousel']">Portfolio</button>
+        <button mat-menu-item [routerLink]="['/pies']">Pies</button>
+      </mat-menu>
+
+      <li *ngIf="!isAuth">
+        <a routerLink="/carousel">Carousel</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/courses">Courses</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/table">Table</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/signup">Signup</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/training">Training</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
+
+
+
+<!-- <a routerLink="/"><img src="../assets/apple-touch-icon.png" alt="Smiley face" height="50" width="50"></a> -->
