@@ -49,6 +49,10 @@ import { CourseResolver } from './services/course.resolver';
 import { PiesComponent } from './my/pies/pies.component';
 import { CourseDialogComponent } from './my/course-dialog/course-dialog.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ProductFormComponent } from './shop/admin/product-form/product-form.component';
+import { ProductsComponent } from './shop/admin/products/products.component';
+import { CategoryService } from './shop/category.service';
+import { ProductService } from './shop/product.service';
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -73,7 +77,9 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     PortfolioListComponent,
     CourseComponent,
     PiesComponent,
-    CourseDialogComponent
+    CourseDialogComponent,
+    ProductFormComponent,
+    ProductsComponent
 
 
 
@@ -94,7 +100,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireStorageModule    // он нужен для редактирования курсов
 
   ],
-  providers: [EmployeeService, AuthService, TrainingService, CourseResolver],
+  providers: [EmployeeService, AuthService, TrainingService, CourseResolver, CategoryService, ProductService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent, CourseDialogComponent]    // эта запись необходима,
   // так как компонент StopTrainingComponent прописан как .ts файл и является диалоговым окном

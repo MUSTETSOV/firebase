@@ -11,6 +11,8 @@ import { PortfolioCarouselComponent } from './my/portfolio-carousel/portfolio-ca
 import { CourseResolver } from './services/course.resolver';
 import { CourseComponent } from './my/course/course.component';
 import { PiesComponent } from './my/pies/pies.component';
+import { ProductFormComponent } from './shop/admin/product-form/product-form.component';
+import { ProductsComponent } from './shop/admin/products/products.component';
 
 
 const routes: Routes = [
@@ -28,7 +30,12 @@ const routes: Routes = [
     }},
 
   { path: 'carousel', component: PortfolioCarouselComponent},
-  { path: 'pies', component: PiesComponent}
+  { path: 'pies', component: PiesComponent},
+  { path: 'admin/products', component: ProductsComponent},
+  { path: 'admin/products/new', component: ProductFormComponent}
+
+
+
 ];
 
 @NgModule({

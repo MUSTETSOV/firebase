@@ -1,0 +1,49 @@
+
+<section>
+    <form
+      #f = "ngForm"
+      (ngSubmit) = "save(f.value)"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px">
+      <mat-form-field hintLabel="You need title">
+        <input
+          ngModel name="title"
+          matInput
+          required
+          placeholder="Title">
+      </mat-form-field>
+      <mat-form-field hintLabel="You need price">
+        <input
+        ngModel name="price"
+        matInput
+        required
+        placeholder="Price"
+        type="number"
+        min="0"
+        class="example-right-align">
+        <mat-error>Incorrect price</mat-error>
+      </mat-form-field>
+      <mat-form-field hintLabel="Choose category">
+          <mat-select
+          ngModel name="category"
+          required
+          placeholder="Category">
+            <mat-option value="primary"></mat-option>
+            <ng-container  *ngFor = "let c of categories$ | async">
+                <mat-option [value] ="c.name">{{c.name}}</mat-option>
+              </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+              ngModel name="imageUrl"
+              matInput
+              required
+              placeholder="Image URL">
+          </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Save</button>
+    </form>
+  </section>
+
+
