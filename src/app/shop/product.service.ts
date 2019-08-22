@@ -1,14 +1,26 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
+
+
   constructor(private db: AngularFireDatabase) { }
-create(product) {
+
+  productList: AngularFireList<any>;
+
+  create(product) {
   return this.db.list('/products').push(product);
+}
+
+
+getAll() {
+  this.productList = this.db.list('products');
+  return this.productList.snapshotChanges();
+
 }
 
 

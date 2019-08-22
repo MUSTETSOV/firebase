@@ -29,7 +29,8 @@ import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material';
     Material.MatSortModule,
     Material.MatPaginatorModule,
     Material.MatMenuModule,
-    Material.MatProgressBarModule
+    Material.MatProgressBarModule,
+    Material.MatTableModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -54,7 +55,8 @@ import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material';
     Material.MatSortModule,
     Material.MatPaginatorModule,
     Material.MatMenuModule,
-    Material.MatProgressBarModule
+    Material.MatProgressBarModule,
+    Material.MatTableModule
   ],
   declarations: [],
   providers: [
