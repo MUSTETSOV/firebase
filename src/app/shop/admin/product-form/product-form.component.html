@@ -1,5 +1,5 @@
-
-<section>
+ <div  fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px" fxLayoutAlign="center center">
+  <section>
     <form
       #f = "ngForm"
       (ngSubmit) = "save(f.value)"
@@ -8,6 +8,7 @@
       fxLayoutGap="10px">
       <mat-form-field hintLabel="You need title">
         <input
+          #tit="ngModel"
           ngModel name="title"
           matInput
           required
@@ -15,6 +16,7 @@
       </mat-form-field>
       <mat-form-field hintLabel="You need price">
         <input
+        #price="ngModel"
         ngModel name="price"
         matInput
         required
@@ -37,6 +39,7 @@
         </mat-form-field>
         <mat-form-field>
             <input
+              #image="ngModel"
               ngModel name="imageUrl"
               matInput
               required
@@ -45,5 +48,20 @@
       <button type="submit" mat-raised-button color="primary">Save</button>
     </form>
   </section>
+  <mat-card class="example-card" style="left: 20px">
+    <mat-card-header>
+      <mat-card-title>{{ tit.value }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ image.value }}" >
+    <mat-card-content>
+      <p>
+        {{ price.value | currency: 'USD':true }}
+      </p>
+    </mat-card-content>
+
+  </mat-card>
+  </div>
+
+
 
 

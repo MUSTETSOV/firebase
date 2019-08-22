@@ -53,6 +53,7 @@ import { ProductFormComponent } from './shop/admin/product-form/product-form.com
 import { ProductsComponent } from './shop/admin/products/products.component';
 import { CategoryService } from './shop/category.service';
 import { ProductService } from './shop/product.service';
+import { Test1Component } from './test/test1/test1.component';
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -79,7 +80,8 @@ import { ProductService } from './shop/product.service';
     PiesComponent,
     CourseDialogComponent,
     ProductFormComponent,
-    ProductsComponent
+    ProductsComponent,
+    Test1Component
 
 
 
