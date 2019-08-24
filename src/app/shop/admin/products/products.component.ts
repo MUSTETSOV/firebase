@@ -38,10 +38,15 @@ export class ProductsComponent implements OnInit {
           this.listData.sort = this.sort;
           this.listData.paginator = this.paginator;
 
-          this.listData.filterPredicate = (data, filter) => { const filterArray = filter.split('$'); return (!filterArray[0] || data.column1.toLowerCase().indexOf(filterArray[0].trim().toLowerCase()) > -1) && (!filterArray[1] || data.column2.indexOf(filterArray[1]) > -1) ; };
+          // делаем поиск только по избранным полям
+
+          // это как-то работает, но с ошибками см в работающих исходник, но он не работает
+          this.listData.filterPredicate =
+           (data, filter) => data.title.indexOf(filter) != -1;
 
 
-      });
+    }
+    );
   }
 
   onSearchClear() {

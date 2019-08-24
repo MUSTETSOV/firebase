@@ -32,7 +32,8 @@ const routes: Routes = [
   { path: 'carousel', component: PortfolioCarouselComponent},
   { path: 'pies', component: PiesComponent},
   { path: 'admin/products', component: ProductsComponent},
-  { path: 'admin/products/new', component: ProductFormComponent}
+  { path: 'admin/products/new', component: ProductFormComponent},
+  { path: 'admin/products/:id', component: ProductFormComponent}
 
 
 

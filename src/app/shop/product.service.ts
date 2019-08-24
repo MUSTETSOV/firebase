@@ -23,5 +23,9 @@ getAll() {
 
 }
 
+getProduct(productId) {
+  return this.db.object('products/' + productId).valueChanges();
+}
+
 
 }
