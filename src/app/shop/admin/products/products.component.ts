@@ -41,6 +41,7 @@ export class ProductsComponent implements OnInit {
           // делаем поиск только по избранным полям
 
           // это как-то работает, но с ошибками см в работающих исходник, но он не работает
+          // Moch сделал это через onDestroy, можно попробовать
           this.listData.filterPredicate =
            (data, filter) => data.title.indexOf(filter) != -1;
 
