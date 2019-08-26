@@ -15,7 +15,8 @@ export class ProductFormComponent implements OnInit {
 
 
   categories$;
-  product;
+  product = {};
+  id;
 
   constructor(
     private router: Router,
@@ -24,14 +25,25 @@ export class ProductFormComponent implements OnInit {
     private productService: ProductService) {
     this.categories$ = categoryService.getCategories();
 
-    let id = this.route.snapshot.paramMap.get('id');
-    if (id) { this.productService.getProduct(id).take(1).subscribe(p => this.product = p); }
+    this.id = this.route.snapshot.paramMap.get('id');
+    if (this.id) { this.productService.getProduct(this.id).take(1).subscribe(p => this.product = p); }
    }
 
    save(product) {
-     this.productService.create(product);
+    // или обновляем и создаем новый продукт
+
+    if (this.id) { this.productService.updateProduct(this.id, product); } else { this.productService.create(product); }
+
+
+    this.router.navigate(['admin/products']);
+    console.log(product);
+   }
+
+   delete() {
+     if (!confirm('Are you sure you want to delete this product&'))  return;
+
+     this.productService.delete(this.id);
      this.router.navigate(['admin/products']);
-     console.log(product);
    }
 
   ngOnInit() {

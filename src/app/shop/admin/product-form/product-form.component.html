@@ -9,7 +9,8 @@
       <mat-form-field hintLabel="You need title">
         <input
           #tit="ngModel"
-          ngModel name="title"
+          [(ngModel)] = "product.title"
+          name="title"
           matInput
           required
           placeholder="Title">
@@ -17,7 +18,8 @@
       <mat-form-field hintLabel="You need price">
         <input
         #price="ngModel"
-        ngModel name="price"
+        [(ngModel)] = "product.price"
+         name="price"
         matInput
         required
         placeholder="Price"
@@ -28,7 +30,8 @@
       </mat-form-field>
       <mat-form-field hintLabel="Choose category">
           <mat-select
-          ngModel name="category"
+          [(ngModel)] = "product.category"
+          name="category"
           required
           placeholder="Category">
             <mat-option value="primary"></mat-option>
@@ -40,19 +43,26 @@
         <mat-form-field>
             <input
               #image="ngModel"
-              ngModel name="imageUrl"
+              [(ngModel)] = "product.imageUrl"
+              name="imageUrl"
               matInput
               required
               placeholder="Image URL">
           </mat-form-field>
-      <button type="submit" mat-raised-button color="primary">Save</button>
+          <div>
+          <button type="submit" mat-raised-button color="primary">Save</button>
+          <button type="submit" (click)="delete()" mat-raised-button color="warn">Delete</button>
+        </div>
     </form>
+
+
   </section>
+
   <mat-card class="example-card" style="left: 20px">
     <mat-card-header>
       <mat-card-title>{{ tit.value }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="{{ image.value }}" >
+    <img mat-card-image src="{{ image.value }}" *ngIf="product.imageUrl" >
     <mat-card-content>
       <p>
         {{ price.value | currency: 'USD':true }}
