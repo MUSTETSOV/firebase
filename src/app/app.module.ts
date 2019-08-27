@@ -54,6 +54,7 @@ import { ProductsComponent } from './shop/admin/products/products.component';
 import { CategoryService } from './shop/category.service';
 import { ProductService } from './shop/product.service';
 import { Test1Component } from './test/test1/test1.component';
+import { MatConfirmDialogComponent } from './shop/mat-confirm-dialog/mat-confirm-dialog.component';
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -81,7 +82,8 @@ import { Test1Component } from './test/test1/test1.component';
     CourseDialogComponent,
     ProductFormComponent,
     ProductsComponent,
-    Test1Component
+    Test1Component,
+    MatConfirmDialogComponent
 
 
 
@@ -104,7 +106,7 @@ import { Test1Component } from './test/test1/test1.component';
   ],
   providers: [EmployeeService, AuthService, TrainingService, CourseResolver, CategoryService, ProductService],
   bootstrap: [AppComponent],
-  entryComponents: [StopTrainingComponent, CourseDialogComponent]    // эта запись необходима,
+  entryComponents: [StopTrainingComponent, CourseDialogComponent, MatConfirmDialogComponent]    // эта запись необходима,
   // так как компонент StopTrainingComponent прописан как .ts файл и является диалоговым окном
 })
 export class AppModule { }
