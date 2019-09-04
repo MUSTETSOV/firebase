@@ -13,6 +13,7 @@ import { CourseComponent } from './my/course/course.component';
 import { PiesComponent } from './my/pies/pies.component';
 import { ProductFormComponent } from './shop/admin/product-form/product-form.component';
 import { ProductsComponent } from './shop/admin/products/products.component';
+import { ShopComponent } from './shop/shop/shop.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'pies', component: PiesComponent},
   { path: 'admin/products', component: ProductsComponent},
   { path: 'admin/products/new', component: ProductFormComponent},
-  { path: 'admin/products/:id', component: ProductFormComponent}
+  { path: 'admin/products/:id', component: ProductFormComponent},
+  { path: 'shop', component: ShopComponent}
 
 
 
