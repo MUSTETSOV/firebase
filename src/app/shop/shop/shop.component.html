@@ -19,7 +19,7 @@
 </section>
 <section>
   <div fxLayout="row wrap" fxLayout.xs="column wrap">
-    <div fxFlex.gt-xs="50%" [fxFlex.gt-md]="100 / 3 + '%'" *ngFor= "let p of products$ | async" fxFlex="33.33">
+    <div fxFlex.gt-xs="50%" [fxFlex.gt-md]="100 / 3 + '%'" *ngFor= "let p of filteredProducts; let i = index" fxFlex="33.33">
     <mat-card >
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
