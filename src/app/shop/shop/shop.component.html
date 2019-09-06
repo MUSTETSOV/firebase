@@ -1,19 +1,36 @@
-<div fxLayout="row wrap" fxLayout.xs="column wrap">
-<div fxFlex.gt-xs="50%" [fxFlex.gt-md]="100 / 3 + '%'" *ngFor= "let p of products$ | async" fxFlex="33.33">
+<div  fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px" >
+  <section>
+    <mat-list>
+      <h3 mat-subheader>Categories</h3>
+        <mat-nav-list>
+          <a mat-list-item *ngFor="let c of categories$ | async"
 
 
-<mat-card >
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{ p.title }}</mat-card-title>
-    <mat-card-subtitle>{{ p.price | currency }}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src] ="p.imageUrl" alt="Photo">
 
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Add</button>
-  </mat-card-actions>
-</mat-card>
-</div>
-</div>
+          routerLink="/shop"
+          [queryParams]="{ category: c.name }"
+          [class.active]="category === c.name" >
 
+          <mat-icon mat-list-icon>folder</mat-icon> {{ c.name }}
+        </a>
+       </mat-nav-list>
+      <mat-divider></mat-divider>
+    </mat-list>
+</section>
+<section>
+  <div fxLayout="row wrap" fxLayout.xs="column wrap">
+    <div fxFlex.gt-xs="50%" [fxFlex.gt-md]="100 / 3 + '%'" *ngFor= "let p of products$ | async" fxFlex="33.33">
+    <mat-card >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ p.title }}</mat-card-title>
+        <mat-card-subtitle>{{ p.price | currency }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src] ="p.imageUrl" alt="Photo">
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Add</button>
+      </mat-card-actions>
+    </mat-card>
+    </div>
+    </div>
+</section>
