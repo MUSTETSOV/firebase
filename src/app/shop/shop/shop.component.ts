@@ -3,7 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { CategoryService } from '../category.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
-import { map } from 'rxjs/operators';
+import 'rxjs/add/operator/switchMap';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -26,18 +26,27 @@ export class ShopComponent implements OnInit {
 
     this.categories$ = categoryService.getCategories();
 
-    route.queryParamMap.subscribe(params => {
-      this.category = params.get('category');
-
-      this.filteredProducts = (this.category) ?
-      this.prod.filter(p => p.category === this.category) :
-      this.prod;
-    });
 
 
-    productService.getAll2().subscribe(prod => this.prod = prod);
+
+    // рабочий кусок по загрузке
+    // но меняем его чтобы исправить два subscriba
+    // productService.getAll2().subscribe(prod => this.prod = prod);
 
 
+    productService
+    .getAll2()
+    .switchMap(prod => {
+      this.prod = prod;
+      return route.queryParamMap;
+    })
+     .subscribe(params => {
+        this.category = params.get('category');
+
+        this.filteredProducts = (this.category) ?
+        this.prod.filter(p => p.category === this.category) :
+        this.prod;
+      });
     }
 
 
