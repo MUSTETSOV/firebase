@@ -4,17 +4,7 @@
 <section>
   <div fxLayout="row wrap" fxLayout.xs="column wrap">
     <div fxFlex.gt-xs="50%" [fxFlex.gt-md]="100 / 3 + '%'" *ngFor= "let p of filteredProducts; let i = index" fxFlex="33.33">
-    <mat-card >
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{ p.title }}</mat-card-title>
-        <mat-card-subtitle>{{ p.price | currency }}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image [src] ="p.imageUrl" alt="Photo">
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Add</button>
-      </mat-card-actions>
-    </mat-card>
+      <app-product-card [product]="p"></app-product-card>
     </div>
     </div>
 </section>
