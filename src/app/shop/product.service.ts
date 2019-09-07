@@ -43,7 +43,7 @@ getAll2() {
   return this.db.list('/products').snapshotChanges()
     .pipe(
       map(actions =>
-         actions.map(a => ({ key: a.key, ...a.payload.val()} as Product )) // here you have made something strange.
+         actions.map(a => ({ key: a.key, ...a.payload.val()}  )) // here you have made something strange.
       )
     );
 }

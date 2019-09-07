@@ -15,7 +15,7 @@ export class ShopComponent implements OnInit {
   // products$;
   categories$;
   category: string;
-  prod: Product [] = [];
+  prod: any [] = [];  // я поставил any вместо Product[], вроде работает
   filteredProducts: Product[];
 
   constructor(
