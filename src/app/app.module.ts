@@ -56,6 +56,7 @@ import { ProductService } from './shop/product.service';
 import { Test1Component } from './test/test1/test1.component';
 import { MatConfirmDialogComponent } from './shop/mat-confirm-dialog/mat-confirm-dialog.component';
 import { ShopComponent } from './shop/shop/shop.component';
+import { ProductFilterComponent } from './shop/shop/product-filter/product-filter.component';
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -85,7 +86,8 @@ import { ShopComponent } from './shop/shop/shop.component';
     ProductsComponent,
     Test1Component,
     MatConfirmDialogComponent,
-    ShopComponent
+    ShopComponent,
+    ProductFilterComponent
 
 
 

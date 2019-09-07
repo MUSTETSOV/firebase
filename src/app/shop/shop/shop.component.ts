@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { CategoryService } from '../category.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
 import 'rxjs/add/operator/switchMap';
@@ -13,18 +13,17 @@ import { ProductService } from '../product.service';
 })
 export class ShopComponent implements OnInit {
   // products$;
-  categories$;
-  category: string;
+
+  category: string;   // это свойство пробрасывается в компонент product-filter (непонятно как)
   prod: any [] = [];  // я поставил any вместо Product[], вроде работает
   filteredProducts: Product[];
 
   constructor(
     route: ActivatedRoute,
     private db: AngularFireDatabase,
-    categoryService: CategoryService,
     productService: ProductService) {
 
-    this.categories$ = categoryService.getCategories();
+
 
 
 
