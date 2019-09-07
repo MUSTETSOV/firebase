@@ -22,8 +22,12 @@
       <mat-menu #shop="matMenu">
         <button mat-menu-item [routerLink]="['/shop']">Shop</button>
         <button mat-menu-item [routerLink]="['/admin/products']">Products</button>
+      </mat-menu>
 
-
+      <button mat-button [matMenuTriggerFor]="home">Gallery</button>
+      <mat-menu #home="matMenu">
+        <button mat-menu-item [routerLink]="['/home']">Home</button>
+        <button mat-menu-item [routerLink]="['home/upload']">Upload</button>
       </mat-menu>
 
 

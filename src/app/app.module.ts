@@ -58,6 +58,9 @@ import { MatConfirmDialogComponent } from './shop/mat-confirm-dialog/mat-confirm
 import { ShopComponent } from './shop/shop/shop.component';
 import { ProductFilterComponent } from './shop/shop/product-filter/product-filter.component';
 import { ProductCardComponent } from './shop/product-card/product-card.component';
+import { HomeComponent } from './gallery/home/home.component';
+import { ImageComponent } from './gallery/image/image.component';
+import { ImageListComponent } from './gallery/image-list/image-list.component';
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -89,7 +92,10 @@ import { ProductCardComponent } from './shop/product-card/product-card.component
     MatConfirmDialogComponent,
     ShopComponent,
     ProductFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    HomeComponent,
+    ImageComponent,
+    ImageListComponent
 
 
 

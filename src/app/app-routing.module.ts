@@ -14,6 +14,9 @@ import { PiesComponent } from './my/pies/pies.component';
 import { ProductFormComponent } from './shop/admin/product-form/product-form.component';
 import { ProductsComponent } from './shop/admin/products/products.component';
 import { ShopComponent } from './shop/shop/shop.component';
+import { HomeComponent } from './gallery/home/home.component';
+import { ImageComponent } from './gallery/image/image.component';
+import { ImageListComponent } from './gallery/image-list/image-list.component';
 
 
 const routes: Routes = [
@@ -35,7 +38,11 @@ const routes: Routes = [
   { path: 'admin/products', component: ProductsComponent},
   { path: 'admin/products/new', component: ProductFormComponent},
   { path: 'admin/products/:id', component: ProductFormComponent},
-  { path: 'shop', component: ShopComponent}
+  { path: 'shop', component: ShopComponent},
+  { path: 'home', component: HomeComponent, children: [
+    {path: 'upload', component: ImageComponent},
+    {path: 'list', component: ImageListComponent}
+  ]}
 
 
 
