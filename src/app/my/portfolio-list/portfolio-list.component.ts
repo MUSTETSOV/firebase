@@ -8,6 +8,7 @@ import { Portfolio } from 'src/app/model/portfolio';
 })
 export class PortfolioListComponent implements OnInit {
 
+  defaultImg: string  = 'assets/images/noImage.jpg';
 
   @Input()
   portfolios: Portfolio[];

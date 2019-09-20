@@ -4,7 +4,10 @@
         <div fxLayout="row wrap" fxLayout.xs="column wrap">
         <div fxFlex.gt-xs="50%" [fxFlex.gt-md]="100 / 3 + '%'" *ngFor="let portfolio of portfolios" fxFlex="33.33">
           <mat-card class="p-0 m-0">
-            <img mat-card-image src="assets/images/sq-10.jpg">
+            <img mat-card-image [src]="portfolio.imageUrl ? portfolio.imageUrl : defaultImg">
+
+       
+
             <mat-card-content>
               <h5><strong><a href="">{{portfolio.title}}</a></strong></h5>
               <p>

@@ -9,6 +9,12 @@
         </p>
       </div>
 
+      <div>
+        <button mat-raised-button mat-lg-button 
+        (click)="loadMore()">
+        Add blog</button>
+      </div>
+
       <div  fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
 
     <app-portfolio-list [portfolios]="portfolios$ | async"></app-portfolio-list>
@@ -19,6 +25,7 @@
     <button mat-raised-button mat-lg-button color="accent"
     (click)="loadMore()">
     LOAD MORE</button>
+   
   </div>
 
 
