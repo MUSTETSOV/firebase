@@ -1,0 +1,66 @@
+<div  fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px" fxLayoutAlign="center center">
+    <section >
+      <form
+      class="margin-form"
+        #f = "ngForm"
+        (ngSubmit) = "save(f.value)"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="10px">
+        <mat-form-field hintLabel="You need title">
+          <input
+            #tit="ngModel"
+            [(ngModel)] = "portfolio.title"
+            name="title"
+            matInput
+            required
+            placeholder="Title">
+        </mat-form-field>
+  
+        <mat-form-field hintLabel="You need title">
+          <textarea
+            #tit="ngModel"
+            [(ngModel)] = "portfolio.description"
+            name="description"
+            matInput
+            required
+            placeholder="Description">
+        </textarea>
+        </mat-form-field>
+  
+       
+  
+  
+  
+          <!-- <mat-form-field>
+              <input
+                #image="ngModel"
+                [(ngModel)] = "portfolio.imageUrl"
+                name="imageUrl"
+                matInput
+                required
+                placeholder="Image URL">
+            </mat-form-field> -->
+            <div>
+            <button type="submit" mat-raised-button color="primary">Save</button>
+         
+          </div>
+      </form>
+  
+  
+    </section>
+  
+    <!-- <mat-card *ngIf="product.title" class="example-card" style="left: 20px">
+      <mat-card-header>
+        <mat-card-title>{{ tit.value }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{ image.value }}" *ngIf="product.imageUrl" >
+      <mat-card-content>
+        <p>
+          {{ price.value | currency: 'USD':true }}
+        </p>
+      </mat-card-content>
+  
+    </mat-card> -->
+    </div>
+  

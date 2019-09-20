@@ -17,6 +17,7 @@ import { ShopComponent } from './shop/shop/shop.component';
 import { HomeComponent } from './gallery/home/home.component';
 import { ImageComponent } from './gallery/image/image.component';
 import { ImageListComponent } from './gallery/image-list/image-list.component';
+import { PortfolioDetailsComponent } from './my/portfolio-details/portfolio-details.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
     }},
 
   { path: 'carousel', component: PortfolioCarouselComponent},
+  { path: 'portfolio-details', component: PortfolioDetailsComponent},
   { path: 'pies', component: PiesComponent},
   { path: 'admin/products', component: ProductsComponent},
   { path: 'admin/products/new', component: ProductFormComponent},

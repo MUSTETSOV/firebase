@@ -61,6 +61,7 @@ import { ProductCardComponent } from './shop/product-card/product-card.component
 import { HomeComponent } from './gallery/home/home.component';
 import { ImageComponent } from './gallery/image/image.component';
 import { ImageListComponent } from './gallery/image-list/image-list.component';
+import { PortfolioDetailsComponent } from './my/portfolio-details/portfolio-details.component';
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -95,7 +96,8 @@ import { ImageListComponent } from './gallery/image-list/image-list.component';
     ProductCardComponent,
     HomeComponent,
     ImageComponent,
-    ImageListComponent
+    ImageListComponent,
+    PortfolioDetailsComponent
 
 
 
