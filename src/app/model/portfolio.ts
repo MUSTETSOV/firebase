@@ -6,5 +6,6 @@ export interface Portfolio {
   title: string;
   imageUrl: string;
   description: string;
+  date: string;
 
 }

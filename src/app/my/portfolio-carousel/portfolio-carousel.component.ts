@@ -47,7 +47,7 @@ export class PortfolioCarouselComponent implements OnInit {
 
   loadAllPortfolios(pageNumber = 0, pageSize = 3): Observable<Portfolio[]> {
     return this.db.collection('portfolios',
-          ref => ref .orderBy('title')
+          ref => ref .orderBy('date')
           .limit(pageSize)
          )
           .snapshotChanges()

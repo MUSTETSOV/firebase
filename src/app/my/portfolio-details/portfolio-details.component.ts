@@ -3,7 +3,14 @@ import { AngularFirestoreDocument,
   AngularFirestore,
   AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Portfolio } from 'src/app/model/portfolio';
+
+
+
+
+
+
 import { config } from 'process';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio-details',
@@ -14,53 +21,43 @@ export class PortfolioDetailsComponent implements OnInit {
    portfolio = {};
 
 
+
+   myDate = new Date();
+   today = Date.now();
+   
+
+formatDate(date: Date): string {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  return `${year}-${month}-${day}`;
+}
+   
+  
+
+
+
   portfolios: AngularFirestoreCollection<Portfolio>;
   
+
 
   constructor(private db: AngularFirestore) { }
 
 
   save(portfolio: Portfolio) {
-
-    // this.portfolios = db.collection<Portfolio>(config.collection_endpoint);
-
+    
     this.db.collection('portfolios').add(portfolio);
 
-    
-    
-  
+   //  this.resetForm();
   }
 
-
-
-
-  // save(product) {
-  //   // или обновляем и создаем новый продукт
-
-  //   if (this.id) { this.productService.updateProduct(this.id, product); } else { this.productService.create(product); }
-
-
-  //   this.router.navigate(['admin/products']);
-  //   console.log(product);
-  //  }
-
-
-
-  //  create(product) {
-  //   return this.db.list('/products').push(product);
-  // }
-
-
-  // saveCourse(courseId: string, changes: Partial<Course>): Observable<any> {
-
-  //   return from(this.db.doc(`courses/${courseId}`).update(changes));
-
-  // }
-
-
-
-
   ngOnInit() {
+
+   
+   
+
+
   }
 
 }
