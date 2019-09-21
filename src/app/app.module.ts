@@ -62,6 +62,8 @@ import { HomeComponent } from './gallery/home/home.component';
 import { ImageComponent } from './gallery/image/image.component';
 import { ImageListComponent } from './gallery/image-list/image-list.component';
 import { PortfolioDetailsComponent } from './my/portfolio-details/portfolio-details.component';
+import { HttpClientModule } from '@angular/common/http';
+
 // импорт всех vaterial компонентов очущ через модуль material
 
 @NgModule({
@@ -115,7 +117,8 @@ import { PortfolioDetailsComponent } from './my/portfolio-details/portfolio-deta
     AngularFirestoreModule.enablePersistence() ,   // это св-во присывает данные в кеш и позволяет работать офлайн
     AngularFireAuthModule,
     NguCarouselModule,
-    AngularFireStorageModule    // он нужен для редактирования курсов
+    AngularFireStorageModule,    // он нужен для редактирования курсов
+    HttpClientModule
 
   ],
   providers: [EmployeeService, AuthService, TrainingService, CourseResolver, CategoryService, ProductService],

@@ -67,14 +67,14 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
   
-  
+ 
           <mat-form-field>
               <input
                 #image="ngModel"
                 [(ngModel)] = "portfolio.imageUrl"
                 name="imageUrl"
-                matInput
-                required
+                matInput               
+                value="imgSrc"
                 placeholder="Image URL">
             </mat-form-field>
             <div>
@@ -86,17 +86,6 @@
   
     </section>
   
-    <!-- <mat-card *ngIf="product.title" class="example-card" style="left: 20px">
-      <mat-card-header>
-        <mat-card-title>{{ tit.value }}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="{{ image.value }}" *ngIf="product.imageUrl" >
-      <mat-card-content>
-        <p>
-          {{ price.value | currency: 'USD':true }}
-        </p>
-      </mat-card-content>
-  
-    </mat-card> -->
+   
     </div>
   
